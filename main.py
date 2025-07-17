@@ -6,7 +6,6 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 clock = pygame.time.Clock()
 dt = 0.0
 
-
 def main():
     while True:
         screen.fill('black')
