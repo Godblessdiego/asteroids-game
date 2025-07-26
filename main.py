@@ -1,4 +1,5 @@
 import pygame
+import sys
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT, PLAYER_RADIUS
 from player import Player
 from asteroids import Asteroid
@@ -31,6 +32,13 @@ def main():
                 running = False
 
         updateable.update(dt)
+
+        # Check for collisions between player and asteroids
+        for asteroid in asteroids:
+            if player.collides_with(asteroid):
+                print("Game over!")
+                pygame.quit()
+                sys.exit()
 
         screen.fill('black')
         for sprite in drawable:
